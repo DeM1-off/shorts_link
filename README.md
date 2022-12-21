@@ -12,7 +12,6 @@
 - Controller ShortLinkController.php
 - Requests   ShortLinkRequest.php
 - Services   ShortLinkService.php and ShortLinkServiceInterface.php
-- Services   ShortLinkService.php and ShortLinkServiceInterface.php
 - Events     StatsEvent.php
 - Listeners  StatsListener.php
 - Helper     InfoHelper.php
