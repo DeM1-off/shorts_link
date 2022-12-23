@@ -10,7 +10,7 @@ class InfoHelper
 
     const SUCCESS = 'success';
     const ERROR = 'error';
-    const NOT_LINK = 404;
+    const NOT_LINK = '/page/404';
     const CREATE_SUCCESS = 'Скорочене посилання створено успішно!';
 
 
@@ -34,13 +34,9 @@ class InfoHelper
     {
         return ShortLink::where([
             ['date_del', '>', self::dateNow()],
-            ['stats', '>', 2],
+            ['stats', '>=', 1],
             ['code', self::cutLick($link)]
-        ])->orWhere([
-                ['date_del', '>', self::dateNow()],
-                ['stats', '=', 0],
-                ['code', self::cutLick($link)]]
-        )->first();
+        ])->first();
     }
 
 

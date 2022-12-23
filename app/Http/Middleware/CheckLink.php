@@ -19,7 +19,11 @@ class CheckLink
      */
     public function handle(Request $request, Closure $next)
     {
-        event(new StatsEvent(InfoHelper::cutLick($request->url())));
-        return InfoHelper::checkink($request->url()) ? $next($request) : redirect(InfoHelper::NOT_LINK);
+        if (InfoHelper::checkink($request->url())) {
+            event(new StatsEvent(InfoHelper::cutLick($request->url())));
+            return $next($request);
+        } else {
+            return redirect(InfoHelper::NOT_LINK);
+        }
     }
 }

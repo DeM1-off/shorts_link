@@ -21,3 +21,7 @@ Route::post('/', [ShortLinkController::class, 'store']);
 Route::group([ 'middleware' => 'check_link'], function () {
     Route::get('{code}', [ShortLinkController::class, 'shortenLink'])->name('shorten.link');
 });
+
+ Route::get('/page/404', function () {
+     return view('page.404');
+ });

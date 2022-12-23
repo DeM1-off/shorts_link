@@ -16,17 +16,11 @@ class ShortLinkController extends Controller
 {
 
     /**
-     * @var ShortLinkServiceInterface
-     */
-    private ShortLinkServiceInterface $shortService;
-
-    /**
      * CompanyController constructor.
      * @param ShortLinkServiceInterface $shortService
      */
-    public function __construct(ShortLinkServiceInterface $shortService)
+    public function __construct( private ShortLinkServiceInterface $shortService)
     {
-        $this->shortService = $shortService;
     }
 
     /**

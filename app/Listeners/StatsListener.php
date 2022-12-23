@@ -28,7 +28,7 @@ class StatsListener
     {
         try {
             $count = ShortLink::where('code', $event->data)->first();
-            if ($count->stats >= 2) {
+            if ($count->stats >= 1) {
                 ShortLink::where('code', $event->data)->update(['stats' => $count->stats - 1]);
             }
         } catch (\Exception $e) {
