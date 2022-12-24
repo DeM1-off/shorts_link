@@ -2,9 +2,6 @@
 
 namespace App\Helper;
 
-use App\Events\StatsEvent;
-use App\Models\ShortLink;
-
 class InfoHelper
 {
 

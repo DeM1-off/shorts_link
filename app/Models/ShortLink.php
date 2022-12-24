@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Helper\InfoHelper;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class ShortLink extends Model
