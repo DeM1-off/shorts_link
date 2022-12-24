@@ -24,9 +24,9 @@ class ShortLinkRequest extends FormRequest
     public function rules()
     {
         return [
-            'link' => 'required|url',
-            'stats' => 'required',
-            'date_del' => 'required'
+            'link' => ['required', 'url'],
+            'stats' => ['required'],
+            'date_del' => ['required']
         ];
     }
 }

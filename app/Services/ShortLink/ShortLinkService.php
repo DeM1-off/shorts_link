@@ -35,7 +35,7 @@ class ShortLinkService implements ShortLinkServiceInterface
      */
     public function showLinkAndAddStats($code)
     {
-        return ShortLink::where('code', $code)->first()->link ?? InfoHelper::NOT_LINK;
+        return ShortLink::checkLink($code)->first()->link ?? InfoHelper::NOT_LINK;
     }
 
 

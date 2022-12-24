@@ -28,30 +28,11 @@ class InfoHelper
 
     /**
      * @param $link
-     * @return bool
-     */
-    public static function checkink($link)
-    {
-        return ShortLink::where([
-            ['date_del', '>', self::dateNow()],
-            ['stats', '>=', 1],
-            ['code', self::cutLick($link)]
-        ])->first();
-    }
-
-
-    /**
-     * @param $link
      * @return array|false|int|string|string[]|null
      */
     public static function cutLick($link)
     {
         return str_replace('/', '', parse_url($link, PHP_URL_PATH));
-    }
-
-    public static function dateNow()
-    {
-        return date('Y-m-d h:i:s', strtotime("now"));
     }
 
 

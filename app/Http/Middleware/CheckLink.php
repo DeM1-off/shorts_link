@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use App\Events\StatsEvent;
 use App\Helper\InfoHelper;
+use App\Models\ShortLink;
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Request;
@@ -19,11 +20,11 @@ class CheckLink
      */
     public function handle(Request $request, Closure $next)
     {
-        if (InfoHelper::checkink($request->url())) {
+        if (ShortLink::checkLink($request->url())) {
             event(new StatsEvent(InfoHelper::cutLick($request->url())));
             return $next($request);
-        } else {
-            return redirect(InfoHelper::NOT_LINK);
         }
+
+        return redirect(InfoHelper::NOT_LINK);
     }
 }
