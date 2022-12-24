@@ -21,7 +21,7 @@ class CheckLink
     public function handle(Request $request, Closure $next)
     {
         if (ShortLink::checkLink($request->url())) {
-            event(new StatsEvent(InfoHelper::cutLick($request->url())));
+            event(new StatsEvent(InfoHelper::cutLink($request->url())));
             return $next($request);
         }
 

@@ -34,7 +34,7 @@ class ShortLink extends Model
         return $query->where([
             ['date_del', '>', now()],
             ['stats', '>=', 1],
-            ['code', InfoHelper::cutLick($code)]
+            ['code', InfoHelper::cutLink($code)]
         ]);
     }
 }

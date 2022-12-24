@@ -30,7 +30,7 @@ class InfoHelper
      * @param $link
      * @return array|false|int|string|string[]|null
      */
-    public static function cutLick($link)
+    public static function cutLink($link)
     {
         return str_replace('/', '', parse_url($link, PHP_URL_PATH));
     }
